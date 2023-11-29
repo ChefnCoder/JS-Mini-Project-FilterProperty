@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-image:linear-gradient(to bottom right, rgb(46, 46, 200), BLACK);
+}
+
+.heading{
+    margin-top: 5px;
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+/* GOOD TILL HERE */
+h1{
+padding:10px;
+}
+#main{
+    height: calc(100%-109px);
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.scenery{
+    height: 60%;
+    width:60%;
+    padding:3%;
+
+}
+.prop{
+    padding:3%;
+    width:40%;
+
+}
+
+img{
+    /* display:none; */
+    border-radius: 25px;
+    height: 100%;
+    width:100%;
+    
+}
+
+button{
+    width:100%;
+    padding: 1vw 2vw;
+    margin: 4px;
+
+    font-size: 1.5vw;
+    font-weight: 500;
+
+    /* background-color: #443  d3c; */
+    background-image:linear-gradient(to bottom right, #008afb, #0037ea);
+    color:rgb(221, 233, 233);
+    border-radius: 20px;
+    border: 0px ;
+
+    cursor: pointer;
+}
+
+.imagechange{
+    width:84%;
+    height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-left:20%;
+    /* flex-wrap: wrap; */
+    
+}
+
+.change{
+    
+    background-image:linear-gradient(to bottom right, rgb(0, 179, 255), rgb(0, 124, 249));
+}
+
+
+form{
+    margin-left: 20px;
+    padding: 1vw 2vw;
+    width: 100%;
+    background-image:linear-gradient(to bottom right, rgb(0, 179, 255), rgb(0, 124, 249));
+    border-radius: 20px;
+}
+
+@media(max-width:600px){
+    .heading{
+        /* height: 25px; */
+        font-weight: 500;
+    }
+    #main{
+        flex-direction: column;
+        align-items: center;
+        height:auto;
+
+    }
+    .scenery{
+        width: 90%;
+    }
+
+    .prop{
+        width: 70%;
+        margin-bottom: 10px;
+    }
+
+    button{
+        padding: 5%;
+        margin: 4px;
+    
+        font-size:medium;
+        font-weight: 500;
+    
+        /* background-color: #443  d3c; */
+        background-image:linear-gradient(to bottom right, #008afb, #0037ea);
+        color:rgb(221, 233, 233);
+        border-radius: 20px;
+        border: 0px ;
+    
+        cursor: pointer;
+    }
+
+    .imagechange{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .change{
+        margin-bottom: 2%;
+    }
+
+
+    form{
+        margin-top:1%;
+        margin-left:0;
+        padding:4%;
+    }
+}

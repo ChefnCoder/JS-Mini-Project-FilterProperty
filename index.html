@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Property Execution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="heading">
+        <h1>Filter Property</h1>
+    </div>
+    <div id="main">  
+        <div class="scenery">
+            <img src="scenery2.jpg" alt="">
+        </div>
+        <div class="prop">
+            <button class="grayscale">Grayscale</button>
+            <button class ="brightness">Brightness</button>
+            <button class="sepia">Sepia</button>
+            <button class="saturate">Saturate</button>
+            <button class="blur">Blur</button>
+            <button class="original">Original</button>
+            
+        </div>
+    </div>  
+    <div class="imagechange">
+        <button class="change">Change Photo</button>
+        <form>
+            <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(event)"/>
+        </form>
+        <!-- <button class="insert">Insert New Image</button> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
