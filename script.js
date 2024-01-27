@@ -81,15 +81,70 @@ and change kar de
  */
 
 
+// function handleImageUpload(event) {
+//     var file = event.target.files[0];
+//     var reader = new FileReader();
+
+//     reader.onload= function(e) {
+//         var imageDataURL= e.target.result;
+//         image.src=imageDataURL;   
+//     }
+
+//     reader.readAsDataURL(file);
+//     originalcolor();
+// }
+
+//new code update
+// Function to resize the image and set it to a fixed size
+function resizeImage(file) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            // Set the fixed size (adjust these values as needed)
+            const fixedWidth = 300;
+            const fixedHeight = 165;
+
+            canvas.width = fixedWidth;
+            canvas.height = fixedHeight;
+
+            // Draw the image on the canvas
+            ctx.drawImage(img, 0, 0, fixedWidth, fixedHeight);
+
+            // Convert the canvas content to a data URL
+            const resizedDataURL = canvas.toDataURL("image/jpeg"); // You can change the format if needed
+
+            // Resolve with the resized data URL
+            resolve(resizedDataURL);
+        };
+
+        // Handle errors
+        img.onerror = (error) => reject(error);
+
+        // Set the source of the image to the uploaded file
+        img.src = URL.createObjectURL(file);
+    });
+}
+
+// Function to handle image upload
 function handleImageUpload(event) {
     var file = event.target.files[0];
     var reader = new FileReader();
 
-    reader.onload= function(e) {
-        var imageDataURL= e.target.result;
-        image.src=imageDataURL;   
-    }
+    reader.onload = function (e) {
+        var imageDataURL = e.target.result;
+
+        // Resize the image and set it to a fixed size
+        resizeImage(file).then((resizedDataURL) => {
+            // Set the resized image as the source
+            image.src = resizedDataURL;
+            originalcolor();
+        });
+    };
 
     reader.readAsDataURL(file);
     originalcolor();
 }
+
